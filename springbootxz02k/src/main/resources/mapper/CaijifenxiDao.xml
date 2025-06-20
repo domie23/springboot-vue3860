@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CaijifenxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CaijifenxiEntity" id="caijifenxiMap">
+        <result property="caijiyuangonghao" column="caijiyuangonghao"/>
+        <result property="caijiyuanxingming" column="caijiyuanxingming"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="shouji" column="shouji"/>
+        <result property="xiangxixingcheng" column="xiangxixingcheng"/>
+        <result property="hesuanma" column="hesuanma"/>
+        <result property="xingchengma" column="xingchengma"/>
+        <result property="fenxiyuanzhanghao" column="fenxiyuanzhanghao"/>
+        <result property="fenxiyuanxingming" column="fenxiyuanxingming"/>
+        <result property="fengxianpinggu" column="fengxianpinggu"/>
+        <result property="pinggujieguo" column="pinggujieguo"/>
+        <result property="pinggushijian" column="pinggushijian"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CaijifenxiVO" >
+		SELECT * FROM caijifenxi  caijifenxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CaijifenxiVO" >
+		SELECT  caijifenxi.* FROM caijifenxi  caijifenxi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CaijifenxiView" >
+
+		SELECT  caijifenxi.* FROM caijifenxi  caijifenxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CaijifenxiView" >
+		SELECT * FROM caijifenxi  caijifenxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

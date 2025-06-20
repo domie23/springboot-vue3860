@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CaijiyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CaijiyuanEntity" id="caijiyuanMap">
+        <result property="caijiyuangonghao" column="caijiyuangonghao"/>
+        <result property="mima" column="mima"/>
+        <result property="caijiyuanxingming" column="caijiyuanxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="youxiang" column="youxiang"/>
+        <result property="zhaopian" column="zhaopian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CaijiyuanVO" >
+		SELECT * FROM caijiyuan  caijiyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CaijiyuanVO" >
+		SELECT  caijiyuan.* FROM caijiyuan  caijiyuan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CaijiyuanView" >
+
+		SELECT  caijiyuan.* FROM caijiyuan  caijiyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CaijiyuanView" >
+		SELECT * FROM caijiyuan  caijiyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
